@@ -5,7 +5,7 @@ import {
   useLoaderData,
   Form,
   redirect,
-  useNavigation
+  useNavigation,
 } from "react-router-dom";
 import { getContacts, createContact } from "../contacts";
 
@@ -37,15 +37,8 @@ export default function Root() {
               type="search"
               name="q"
             />
-            <div
-              id="search-spinner"
-              aria-hidden
-              hidden={true}
-            />
-            <div
-              className="sr-only"
-              aria-live="polite"
-            ></div>
+            <div id="search-spinner" aria-hidden hidden={true} />
+            <div className="sr-only" aria-live="polite"></div>
           </form>
           <form method="post">
             <button type="submit">New</button>
@@ -80,9 +73,7 @@ export default function Root() {
       </div>
       <div
         id="detail"
-        className={
-          navigation.state === "loading" ? "loading" : ""
-        }
+        className={navigation.state === "loading" ? "loading" : ""}
       >
         <Outlet />
       </div>
